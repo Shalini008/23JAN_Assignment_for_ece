@@ -1,0 +1,5 @@
+2. What happens if an exception is not caught in a C++ program?
+ans=
+C++ exception is a response to an exceptional circumstance that arises while a programming is running. 
+Exceptions provide a way to transfer control from one part of a program to another. 
+If the exception is not caught the program will terminate.

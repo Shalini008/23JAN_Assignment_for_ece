@@ -1,0 +1,39 @@
+4.How do you re-throw an exception in C++? WITH EXAMPLE
+ans=
+
+Rethrowing an expression from within an exception handler can be done by calling throw, by itself, with no exception. 
+This causes current exception to be passed on to an outer try/catch sequence. An exception can only be rethrown from within a catch block.
+When an exception is rethrown, it is propagated outward to the next catch block.
+
+#include<iostream>
+using namespace std;
+void sub(int i,int j)
+{
+    try
+    {
+        if(i==0)
+        {
+            throw i;
+        }
+        else
+            cout<<“Subtraction result is: “<<i-j<<endl;
+    }
+    catch(int i)
+    {
+        cout<<“Exception caught inside sub()\n”;
+        throw;
+    }
+};
+int main()
+{
+    try
+    {
+        sub(8,4);
+        sub(0,8);
+    }
+    catch(int k)
+    {
+        cout<<“Exception caught inside main()\n”;
+    }
+    return 0;
+}
